@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <h1>Playlist</h1>
-    <p>Find my favorite albums here!</p>
+    <p>Find my favorite albums here! (sorted by artist name ascending)</p>
     <div class="albums-grid">
       <div v-for="edge in $page.albums.edges" :key="edge.node.title">
         <a :href=edge.node.url target="_blank">
@@ -10,7 +10,7 @@
         <p class="album-desc">{{ edge.node.title }} by {{ edge.node.artist }}</p>
       </div>
     </div>
-    <p class="album-footer">and many more</p>
+    <p class="album-footer">more will be added</p>
   </Layout>
 </template>
 
@@ -26,11 +26,13 @@ export default {
 .albums-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
 }
 
 .album-thumb {
-  width: 15em;
-  height: 15em;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .album-desc {
