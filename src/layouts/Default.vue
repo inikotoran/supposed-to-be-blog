@@ -1,11 +1,10 @@
 <template>
   <div class="layout">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
+      <g-link to="/">
+        <g-image alt="Example image" src="~/favicon.png" width="30" />
+      </g-link>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
         <g-link class="nav__link" to="/playlist/">Playlist</g-link>
       </nav>
@@ -70,7 +69,7 @@ body {
 }
 
 .footer {
-  margin-bottom: 2em;
+  margin: 2em;
   display: flex;
   justify-content: center;
 }
