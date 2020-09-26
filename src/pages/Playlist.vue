@@ -10,6 +10,7 @@
         <p class="album-desc">{{ edge.node.title }} by {{ edge.node.artist }}</p>
       </div>
     </div>
+    <p class="album-footer">and many more</p>
   </Layout>
 </template>
 
@@ -37,11 +38,15 @@ export default {
   margin-bottom: 2em;
 }
 
+.album-footer {
+  text-align: center;
+}
+
 </style>
 
 <page-query>
   query Albums {
-    albums: allAlbums {
+    albums: allAlbums(sortBy: "artist", order: ASC) {
       edges {
         node {
           title

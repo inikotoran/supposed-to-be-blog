@@ -22,12 +22,14 @@ module.exports = function (api) {
     })
 
     for (const album of albums) {
-      contentType.addNode({
-        title: album.title,
-        artist: album.artist,
-        url: album.url,
-        image: album.image,
-      })
+      if (album.image !== "") {
+        contentType.addNode({
+          title: album.title,
+          artist: album.artist,
+          url: album.url,
+          image: album.image,
+        })
+      }
     }
   })
 }
